@@ -9,24 +9,48 @@ const client = contentful.createClient({
 });
 
 app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "/public"));
+app.set("views", path.join(__dirname, "public"));
 
 app.use("/", express.static(path.join(__dirname, "public")));
+app.use("/our-brand/:id", express.static(path.join(__dirname, "public")));
 
 app.get("/", function (req, res) {
   client.getEntry("7gdja3MIMOs2rOQT9p1axd").then((entry) => {
-    console.log(
-      "Entry image url =>",
-      entry.fields.heroBottleImage.fields.file.url
-    );
     res.render("index", { entry: entry.fields });
   });
 });
 
 app.get("/values", function (req, res) {
   client.getEntry("3jDDeWM7vhgETbXWAuvWja").then((entry) => {
-    console.log(entry)
     res.render("values", { entry: entry.fields });
+  });
+});
+
+app.get("/our-brand", function (req, res) {
+  client
+    .getEntries({
+      content_type: "products",
+    })
+    .then((entries) => {
+      console.log(entries.items[0].fields?.countries);
+      res.render("1 Our Brand", {
+        entries: entries.items,
+      });
+    });
+});
+
+app.get("/our-brand/:id", async function (req, res) {
+  const { id } = req.params;
+
+  const entry = await client.getEntry(id);
+  const entries = await client.getEntries({
+    content_type: "products",
+  });
+
+  res.render("2 Detail beer", {
+    id,
+    entry,
+    entries: entries.items,
   });
 });
 

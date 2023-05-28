@@ -1,517 +1,554 @@
-
-/* font */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-
-/*
-Theme Name: Redstripe
-Author: RAJON DEY
-Author URI: https://www.rdcircles.com/
-*/
-
-
-/*
-  ......................................................
-        Initiative CSS code for any standard theme     
-  ......................................................
-*/
-
-* {
-  margin:0;
-  padding:0;
-  box-sizing: border-box;
-}
-
-*:focus{
-  outline:none !important;
-}
-
-img{
-  max-width:100%;
-  border:none;
-  height:auto;
-}
-h1 ,h2{
-  font-family: 'Bebas Neue', cursive;
-}
-body {
-  font-family: 'Roboto', sans-serif;
-}
-/*....*/
-
-.hero-banner {
-  position: relative;
-  width: 100%;
-  background-position: inherit;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  height: 80vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.video-banner{
-  background: url("images/video-section-banner.png");
-  width: 100%;
-  background-position: inherit;
-  background-size: 100%;
-  background-repeat: repeat;
-  height: 847px;
-  display: flex;
-  justify-content: center; 
-  z-index: 1;
-  height: 100%;
-  top: -242px;
-  position: relative;
-}
-.section-intro{
-  margin-top: 60px;
-  text-align: center;
-}
-.section-intro h2{
-  font-family: 'Bebas Neue', cursive;
-  font-size: 80px;
-  line-height: 74px;
-  color: #ffffff;
-  text-transform: uppercase;
-}
-.section-intro p{
-  font-family: 'Bebas Neue', cursive;
-  font-size: 35px;
-  line-height: 50px;
-  color: #ffffff;
-  text-transform: uppercase;
-}
-
-
-.banner-content {
-  color: #ffffff;
-  max-width: 440px;
-  margin-left: 15%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-}
-.banner-content h1{
-  font-family: 'Bebas Neue', cursive;
-  font-size: 95px;
-  line-height: 87px;
-  color: #ffffff;
-  text-transform: uppercase;
-}
-.banner-content h4{
-  font-family: 'Roboto', sans-serif;
-  font-size: 25px;
-  line-height: 37px;
-  font-weight: bold;
-  color: #ffffff;
-}
-
-.second-banner-content {
+/* Map css start */
+/* #name{
     position: absolute;
-    z-index: 99999;
-    bottom: 20%;
-    max-width: 430px;
-    text-align: center;
-    left: 10%;
-}
-.second-banner-content h2{  
-  font-family: 'Bebas Neue', cursive;
-  font-size: 92px;
-  line-height: 83px;
-  color: #ffffff;
-  text-transform: uppercase;
-}
-.company-intro {
-  position: relative;
-  background: url("images/intro-banner.png");
-  width: 100%;
-  background-position: inherit;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  height: auto;
-}
-/*// all parallax_scroll*/
-.first-bottole {
-  position: relative;
-  top: -20px;
-  left: -5%;
-  width: fit-content;
-}
-.second-bottole {
-    position: relative;
-    left: 9%;
-    top: 600px;
+    background-color: white;
     width: fit-content;
-    z-index: 2;
+    opacity: 0;
+    border-radius: 5px;
+    border: 3px solid pink;
+    padding: 5px;
+    font-size: 1.5rem;
 }
-.three-bottles .three-bottles-1{
-    position: relative;
-    left: 36%;
-    top: -400px;
+#time{
+    background-color: white;
+    width: fit-content;
+    border-radius: 5px;
+    border: 3px solid pink;
+    padding: 5px;
+    font-size: 1.5rem;
 }
-.three-bottles .three-bottles-2{
-    position: relative;
-    left: 42%;
-    top: -350px;
-}
-.three-bottles .three-bottles-3{
-    position: relative;
-    left: 5%;
-    top: -100px;
-    z-index: 2;
-}
-#intro{
-  padding-top: 120px;
-}
-#intro .brand-logo img{
-  margin-bottom: 50px;
-}
-#intro .brand-logo h3{
-  font-family: 'Bebas Neue', cursive;
-  font-size: 48px;
-  line-height: 55px;
-  color: #000000;
-  text-transform: uppercase;
-  font-weight: normal;
-}
-#intro .brand-logo p{
-  font-family: 'Roboto', sans-serif;
-  font-size: 17px;
-  line-height: 34px;
-  color: #000000;
-  width: 95%;
-  margin: 0 auto;
-}
+svg path{
+    cursor: pointer;
 
-/* Popup */
+} */
 
-#video-popup-container {
-  display:none;
-  position: fixed;
-  z-index: 996;
-  width: 60%;
-  left: 50%;
-  margin-left: -30%;
-  top: 20%;
-  background-color: #fff;
+/* body{
+background-color: rgb(50, 50, 68);
+overflow-y: hidden;
+overflow-x: hidden;
+} */
+
+a {
+  color: #000000 !important;
 }
-
-#video-popup-close {
+#name {
+  position: absolute;
+  background-color: white;
+  width: fit-content;
+  opacity: 0;
+  border-radius: 5px;
+  border: 3px solid white;
+  padding: 20px;
+  font-size: 1.5rem;
+  text-align-last: center;
+}
+#time {
+  background-color: white;
+  width: fit-content;
+  border-radius: 5px;
+  border: 3px solid pink;
+  padding: 5px;
+  font-size: 1.5rem;
+}
+svg path {
   cursor: pointer;
+}
+svg > img {
+  max-width: 60px !important  ;
+  max-height: 115px !important;
+  margin: 0;
+  padding: 0;
+}
+#name h4 {
+  color: black;
+  font-size: 22px;
+}
+
+/* Map code code end */
+
+.our-brand-secnd-container {
+  background-image: url("images/banner-1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 145px 0px;
+  overflow: hidden;
+}
+
+/* for red bedg */
+.our-brand-scnd-sec-red {
+  background-image: url(images/red.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  inline-size: max-content;
+  padding: 14px 30px;
   position: absolute;
-  right: -10px;
-  top: -10px;
-  z-index: 998;
-  width: 25px;
-  height: 25px;
-  border-radius: 25px;
+  bottom: 0 !important;
+  text-align-last: center;
+  padding: 30px 55px;
+  color: white;
+}
+
+.our-brand-scnd-sec-red h4 {
+  font-weight: 700;
+  font-size: 40px;
+  margin: 0;
+}
+
+.our-brand-scnd-sec-red p {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* for green bedg */
+.our-brand-scnd-sec-green {
+  background-image: url(images/green.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  inline-size: max-content;
+  padding: 14px 30px;
+  position: absolute;
+  top: 0 !important ;
+  text-align-last: center;
+  color: white;
+  padding: 30px 47px;
+  left: 193px;
+}
+
+.our-brand-scnd-sec-green h4 {
+  font-weight: 700;
+  font-size: 40px;
+  margin: 0;
+}
+
+.our-brand-scnd-sec-green p {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.our-brand-scnd-sec-green {
+  background-image: url("images/green.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1.banner-heading {
+  font-size: 40px;
+  text-align-last: center;
+  font-weight: 700;
+  padding-bottom: 10px;
+}
+
+.main-banner {
+  padding-top: 30px;
+}
+
+p.second-sec-p {
+  text-align-last: center;
+  font-size: 16px;
+  font-weight: 500;
+}
+.secnd-sec-container {
+  padding-top: 40px;
+}
+
+.second-sec-heading {
+  font-size: 25px;
+  text-align-last: center;
+  font-weight: 700;
+}
+
+.third-sec-container {
+  padding: 70px 0px;
+}
+
+/* carousel */
+
+.container.carousel-heading-sec {
+  padding-top: 72px;
+}
+
+h2.carousel-heading-top {
   text-align: center;
-  font-size: 12px;
-  background-color: #000;
-  line-height: 25px;
-  color: #fff;
+  font-size: 28px;
+  color: black;
+  font-weight: 700;
 }
 
-#video-popup-iframe-container {
-  position: absolute;
-  z-index: 997;
-  width: 100%;
-  padding-bottom: 56.25%;
-  border-radius: 2px;
+.owl-carousel .owl-item img {
+  display: block;
+  height: 85px;
+  /* margin: auto; */
+  max-width: 35px;
 }
 
-#video-popup-iframe {
-  z-index: 999;
+.item {
+  text-align: -webkit-center;
+}
+h4.carousel-text {
+  font-size: 15px;
+  padding-top: 12px;
+  font-weight: 600;
+}
+
+.item {
+  margin: 0px 36px;
+  padding: 24px 0px;
+  width: 70%;
+  border-radius: 11px;
+  border: 1px solid rgb(0 0 0 / 10%);
+  box-shadow: 3px 67px 25px -13px #00000064;
+}
+
+.item:hover {
+  background: #eb1e2f;
+  margin: 0px 36px;
+  padding: 24px 0px;
+  width: 70%;
+  color: white;
+  border-radius: 11px;
+}
+
+.item:hover a {
+  color: white !important     ;
+}
+
+.owl-dots {
+  display: none;
+}
+
+.owl-carousel .owl-dots.disabled,
+.owl-carousel .owl-nav.disabled {
+  display: block !important;
+}
+
+button.owl-prev {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
+  left: 0 !important;
   top: 0;
-  background-color: #000;
 }
 
-#video-popup-overlay {
+[type="button"]:not(:disabled),
+[type="reset"]:not(:disabled),
+[type="submit"]:not(:disabled),
+button:not(:disabled) {
+  cursor: pointer;
+  top: 60px !important;
+}
+
+button.owl-next {
+  position: absolute;
+  right: 0;
+  top: 0 !important;
+}
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+  display: none;
+}
+.owl-theme .owl-nav [class*="owl-"]:hover {
+  background: #eb1e2f !important;
+  color: #ffffff !important;
+  text-decoration: none;
+}
+
+.owl-theme .owl-nav [class*="owl-"] {
+  color: #fff !important;
+  font-size: 16px !important;
+  /* font-weight: 900 !important; */
+  margin: 0px !important;
+  padding: 4px 8px !important;
+  background: #eb1e2f !important;
+  display: inline-block !important;
+  border-radius: 50px !important;
+}
+
+.row.third-sec-row {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+/* DETAIL BEER  PAGE CSS */
+
+.back-to-text h3 {
+  font-size: 16px;
+  background-color: #eb1e2f;
+  text-align-last: center;
+  font-weight: 700;
+  padding: 10px 0px;
+  color: white;
+}
+
+.container.detail-pg-container {
+  padding-top: 60px;
+}
+
+img.dtail-pg-secnd-sec-left-img {
+  float: right;
+  width: 35%;
+}
+
+.dtail-pg-secnd-sec-right-div h2 {
+  font-size: 29px;
+  font-weight: 700;
+}
+
+.dtail-pg-secnd-sec-right-div h5 {
+  font-size: 17px;
+}
+.dtail-pg-secnd-sec-left-div {
+  padding-right: 40px;
+}
+.dtail-pg-secnd-sec-right-div p {
+  font-size: 16px;
+}
+.dtail-pg-secnd-sec-right-div h6 {
+  font-size: 15px;
+  font-weight: 700;
+}
+.dtail-pg-secnd-sec-right-div {
+  padding-right: 110px;
+}
+
+img.dtail-pg-secnd-sec-right-image {
+  width: 40%;
+}
+
+.counteries-bought-heading-sec {
+  padding-top: 75px;
+  padding-bottom: 30px;
+}
+h2.counteries-bought-heading {
+  text-align: center;
+  font-size: 28px;
+  color: black;
+  font-weight: 700;
+}
+
+button.dtail-pg-secnd-sec-right-btn a {
+  background: #eb1e2f;
+  color: white;
+  text-decoration: none !important;
+  border: none;
+  font-weight: 500;
+  font-size: 14px;
+  margin-top: 18px;
+  padding: 11px 12px;
+}
+button.dtail-pg-secnd-sec-right-btn {
+  background: #eb1e2f;
+  color: white;
+  text-decoration: none !important;
+  border: none;
+  font-weight: 500;
+  font-size: 14px;
+  margin-top: 18px;
+  padding: 11px 12px;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+button.dtail-pg-secnd-sec-right-btn :hover {
+  background-color: #eb1e2f;
+  color: white !important;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0px 18px;
+}
+
+.ul-div {
+  text-align: -webkit-center;
+}
+
+.ul-div li a {
+  font-size: 13px;
+  font-weight: 700;
+  color: black;
+}
+
+.ul-div li a:hover {
+  color: #eb1e2f;
+}
+
+.container.counteries-bought-sec {
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 47px 0px;
+  margin-bottom: 85px;
+}
+.ul-heading {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: black;
+}
+
+.caricon-div {
+  display: flex;
+  place-content: center;
+}
+
+/* js ul css */
+
+.js-ul-data {
+  display: flex;
+}
+
+/* Media Query  */
+
+@media only screen and (max-width: 768px) {
+  h1.banner-heading {
+    font-size: 32px;
+  }
+  h4.carousel-text {
+    font-size: 15px;
+    padding-top: 9px;
+  }
+  .dtail-pg-secnd-sec-right-div {
+    padding-right: 10px;
+  }
+  img.dtail-pg-secnd-sec-left-img {
+    float: right;
+    width: 45%;
+  }
+
+  .our-brand-secnd-container {
+    padding: 95px 0px;
+  }
+
+  .our-brand-scnd-sec-red h4 {
+    font-size: 24px;
+  }
+
+  .our-brand-scnd-sec-red p {
+    font-size: 11px;
+  }
+  .our-brand-scnd-sec-green h4 {
+    font-size: 24px;
+  }
+
+  .our-brand-scnd-sec-green p {
+    font-size: 11px;
+  }
+
+  .our-brand-scnd-sec-red {
+    padding: 17px 30px;
+  }
+  .our-brand-scnd-sec-green {
+    padding: 17px 20px;
+    left: 119px;
+  }
+
+  .item {
+    width: 62%;
+  }
+
+  .item:hover {
+    width: 62%;
+  }
+  .owl-dots {
     display: none;
-    position: fixed;
-    z-index: 995;
-    top: 0;
-    background-color: rgba(0,0,0,0.2);
-    opacity: 0.8;
+  }
+
+  .col-md-2.links-col-1 {
+    max-width: 60px !important;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0px 6px;
+  }
+  .js-ul-data {
+    display: block !important;
+  }
+}
+
+@media only screen and (max-width: 429px) {
+  h1.banner-heading {
+    font-size: 26px;
+  }
+  .owl-dots {
+    display: none;
+  }
+  img.dtail-pg-secnd-sec-left-img {
+    float: left;
     width: 100%;
-    height: 100%;
-    left: 0;
-}
-
-#video-popup-close:hover {
-  color: #DE0023;
-}
-
-
-
-/*RESPONSIVENESS*/
-@media (max-width: 1901px) {
-  .second-bottole {
-    left: 10%;
   }
-  .three-bottles .three-bottles-3 {
-      left: 0%;
+  .col-md-6.dtail-pg-secnd-sec-right-col-1 {
+    display: flex;
+    place-content: center;
   }
-  .second-bottole img{
-    width: 70%;
+  .col-md-6.dtail-pg-secnd-sec-right-col-2 {
+    text-align: center;
   }
-  .three-bottles img{
-    max-width: 250px;
-  }
-  .video-banner{
-    top: -10px;
-    position: relative;
-  }
-  .second-banner-content {
-      bottom: 10%;
-  }
-}
-
-@media (max-width: 1440px) { 
-  .first-bottole {
-      left: -7%;
-  }
-  .first-bottole img{
-    width: 60%;
-  }
-  .banner-content h1 {
-      font-size: 65px;
-      line-height: 60px;
-  }
-  .banner-content h4 {
-      font-size: 22px;
-      line-height: 28px;
-  }
-  .banner-content {
-      max-width: 300px;
+  .dtail-pg-secnd-sec-left-div {
+    padding-right: 0px;
   }
 
-  .second-bottole {
-    left: 9%;
-    top: 460px;
-  }
-  .second-bottole img{
-    width: 70%;
-  }
-  .three-bottles img{
-    max-width: 250px;
-  }
-  .three-bottles .three-bottles-3 {
-      left: -13%;
-  }
-  .three-bottles .three-bottles-2 {
-    left: 36%;
+  .our-brand-secnd-container {
+    padding: 68px 0px;
   }
 
-  .second-banner-content h2 {
-    font-size: 52px;
-    line-height: 54px;
-  }
-  .second-banner-content {
-      bottom: 22%;
-      max-width: 330px;
+  .our-brand-scnd-sec-red h4 {
+    font-size: 24px;
   }
 
-  .video-banner{
-    top: -180px;
-    position: relative;
+  .our-brand-scnd-sec-red p {
+    font-size: 11px;
   }
-}
-
-@media (max-width: 1199.98px) { 
-  .first-bottole {
-      left: -7%;
-      top: -90px;
-  }
-  .first-bottole img{
-    width: 60%;
-  }
-  .banner-content h1 {
-      font-size: 45px;
-      line-height: 50px;
-  }
-  .banner-content h4 {
-      font-size: 20px;
-      line-height: 26px;
+  .our-brand-scnd-sec-green h4 {
+    font-size: 24px;
   }
 
-  .second-bottole {
-    left: 7%;
-    top: 400px;
-  }
-  .second-bottole img{
-    width: 60%;
-  }
-  .three-bottles img{
-    max-width: 200px;
-  }
-  .three-bottles {
-    z-index: 1;
-  }
-  .three-bottles .three-bottles-1 {
-      left: 38%;
-      top: -300px;
-  }
-  .three-bottles .three-bottles-2 {
-      left: 40%;
-      top: -300px;
-  }
-  .three-bottles .three-bottles-3 {
-      left: -7%;
+  .our-brand-scnd-sec-green p {
+    font-size: 11px;
   }
 
-  .second-banner-content h2 {
-    font-size: 42px;
-    line-height: 44px;
+  .our-brand-scnd-sec-red {
+    padding: 4px 16px;
+    left: 195px;
   }
-  .second-banner-content {
-      bottom: 18%;
-      max-width: 280px;
-  }
-
-  .video-banner{
-    top: -142px;
-    position: relative;
+  .our-brand-scnd-sec-green {
+    padding: 4px 5px;
+    left: 195px;
   }
 
-}
-@media (max-width: 991.98px) { 
-  .first-bottole {
-      left: -6%;
-      top: -80px;
-  }
-  .first-bottole img{
-    width: 40%;
-  }
-  .banner-content h1 {
-      font-size: 35px;
-      line-height: 40px;
-  }
-  .banner-content h4 {
-      font-size: 18px;
-      line-height: 24px;
+  .second-sec-heading {
+    font-size: 23px;
+    padding: 0px 20px;
+    text-align: -webkit-center;
   }
 
-  .second-bottole {
-    left: 8%;
-    top: 300px;
-  }
-  .second-bottole img{
-    width: 40%;
-  }
-  .three-bottles img{
-    max-width: 150px;
-  }
-  .three-bottles .three-bottles-1 {
-      left: 38%;
-      top: -200px;
-  }
-  .three-bottles .three-bottles-2 {
-      left: 39%;
-      top: -300px;
-  }
-  .three-bottles .three-bottles-3 {
-      left: -4%;
+  .item {
+    width: 75%;
   }
 
-  .second-banner-content {
-    bottom: 15%;
-      max-width: 280px;
+  .item:hover {
+    width: 75%;
   }
 
-}
-
-@media (max-width: 767.98px) {
-  .first-bottole {
-    position: absolute;
+  .counteries-bought-heading-sec {
+    padding-top: 32px;
+    padding-bottom: 18px;
   }
-  .first-bottole img{
-    width: 100px;
+  h2.counteries-bought-heading {
+    font-size: 25px;
   }
-  .hero-banner{
-    height: auto;
+  .container.carousel-heading-sec {
+    padding-top: 30px;
   }
-
-  .banner-content{
-    align-items: flex-start;
-    padding: 25px 0px;
+  .third-sec-container {
+    padding: 45px 0px;
   }
-  .banner-content h1 {
-      font-size: 25px;
-      line-height: 26px;
+  .js-ul-data {
+    display: block !important;
   }
-  .banner-content h4 {
-      font-size: 14px;
-      line-height: 18px;
-  }
-
-  .hero-banner .col{
-    position: relative;
-  }
-  .first-bottole{
-    position: absolute;
-    left: 5%;
-    top:-120px;
-  }
-  .second-bottole {
-    left: 37%;
-    top: 120px;
-  }
-  .second-bottole img{
-    width: 100px;
-  }
-  .three-bottles img {
-    max-width: 80px;
-  }
-  .three-bottles .three-bottles-1 {
-    left: 55%;
-    top: -150px;
-  }
-  .three-bottles .three-bottles-2 {
-    left: 60%;
-    top: -238px;
-  }
-  .three-bottles .three-bottles-3 {
-    left: 27%;
-    top: -168px;
-  }
-
-  .second-banner-content {
-    bottom: 18%;
-    max-width: 132px;
-  }
-  .second-banner-content h2 {
-    font-size: 28px;
-    line-height: 32px;
-  }
-
-  .brand-logo .text-end{
-    text-align: left!important;
-  }
-  #intro .brand-logo img {
-    margin-bottom: 20px;
-  }
-  #intro .brand-logo h3 {
-    font-size: 22px;
-    line-height: 26px;
-  }
-  #intro .brand-logo p {
-    font-size: 14px;
-    line-height: 18px;
-  }
-
-  .video-banner {
-    top: -50px;
-    position: relative;
-  }
-  .video-banner .parallax_scroll{
-    padding-top: 80px!important;
-  }
-
 }
