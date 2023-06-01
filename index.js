@@ -27,16 +27,20 @@ app.get("/values", function (req, res) {
 });
 
 app.get("/our-brand", function (req, res) {
-  client
-    .getEntries({
-      content_type: "products",
-    })
-    .then((entries) => {
-      console.log(entries.items[0].fields?.countries);
-      res.render("1 Our Brand", {
-        entries: entries.items,
+  client.getEntry("616xPWE78QnfDLleJTx3CS").then((entry) => {
+    console.log("Our Brand:", entry.fields)
+    client
+      .getEntries({
+        content_type: "products",
+      })
+      .then((entries) => {
+        console.log(entries.items[0].fields?.countries);
+        res.render("1 Our Brand", {
+          entries: entries.items,
+          entry: entry.fields,
+        });
       });
-    });
+  });
 });
 
 app.get("/our-brand/:id", async function (req, res) {

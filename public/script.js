@@ -43,6 +43,32 @@ async function getData(place) {
   time = data.datetime;
   // document.getElementById("time").innerText=`${place}'s time = ${time} ${data . timezone_abbreviation}`
 }
+
+const changeImages = (products) => {
+  const data = JSON.parse(products);
+
+  document.querySelectorAll(".allpaths").forEach((e) => {
+    e.setAttribute("images", "");
+
+    data?.forEach((pro) => {
+      const isMatch = pro?.fields?.countries?.find(
+        (cnt) =>
+          cnt?.fields?.title.toLowerCase() ===
+          e.getAttribute("id").toLowerCase()
+      );
+
+      if (isMatch) {
+        e.setAttribute(
+          "images",
+          `${e.getAttribute("images")} ${
+            pro?.fields?.image?.fields?.file?.url
+          }, `
+        );
+      }
+    });
+  });
+};
+
 document.querySelectorAll(".allpaths").forEach((e) => {
   e.addEventListener("mouseenter", function (j) {
     // console.log();
