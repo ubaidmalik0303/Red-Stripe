@@ -44,12 +44,14 @@ async function getData(place) {
   // document.getElementById("time").innerText=`${place}'s time = ${time} ${data . timezone_abbreviation}`
 }
 
+document.querySelectorAll(".allpaths").forEach((e) => {
+  e.removeAttribute("images");
+});
+
 const changeImages = (products) => {
   const data = JSON.parse(products);
 
   document.querySelectorAll(".allpaths").forEach((e) => {
-    e.setAttribute("images", "");
-
     data?.forEach((pro) => {
       const isMatch = pro?.fields?.countries?.find(
         (cnt) =>
@@ -58,18 +60,33 @@ const changeImages = (products) => {
       );
 
       if (isMatch) {
-        e.setAttribute(
-          "images",
-          `${e.getAttribute("images")} ${
-            pro?.fields?.image?.fields?.file?.url
-          }, `
-        );
+        if (e.getAttribute("images")) {
+          e.setAttribute(
+            "images",
+            `${e.getAttribute(
+              "images"
+            )} ${pro?.fields?.image?.fields?.file?.url.slice(2)}, `
+          );
+        } else {
+          e.setAttribute(
+            "images",
+            `${pro?.fields?.image?.fields?.file?.url.slice(2)}, `
+          );
+        }
       }
     });
   });
 };
 
 document.querySelectorAll(".allpaths").forEach((e) => {
+  // if (
+  //   e.getAttribute("images") === "" ||
+  //   e.getAttribute("images") === null ||
+  //   e.getAttribute("images") === undefined
+  // ) {
+  //   return;
+  // }
+
   e.addEventListener("mouseenter", function (j) {
     // console.log();
     offsets = this.getBoundingClientRect();
@@ -85,9 +102,10 @@ document.querySelectorAll(".allpaths").forEach((e) => {
     // document.getElementById("namep").innerText=e.id;
 
     var images_1 = e.getAttribute("images");
+    console.log("Images", images_1)
     var brandlinks_1 = e.getAttribute("brandlinks");
 
-    // console.log(images_1);
+    console.log(images_1);
     const all_images = images_1.split(",");
     const all_brand_links = brandlinks_1.split(",");
 
@@ -100,7 +118,7 @@ document.querySelectorAll(".allpaths").forEach((e) => {
       var img =
         "<a href='" +
         brand_link +
-        "'><img src='images/" +
+        "'><img src='" +
         image_name +
         "' style='max-height: 100px;'></a>";
 
