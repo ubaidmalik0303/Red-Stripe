@@ -427,3 +427,4 @@ function change_countries_table(drink_name) {
 
   $("#countries_table").html(html_data);
 }
+

@@ -9,7 +9,9 @@ const client = contentful.createClient({
   accessToken: "blMbzyPmhrByPUrh4Oza4kru7nnM1rPP5aP4RliAunQ",
 });
 
-app.use(cors());
+app.use(cors({
+  origin: "*"
+}));
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "public"));
