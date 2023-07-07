@@ -52,6 +52,8 @@ function changeImages(products) {
   const data = JSON.parse(products);
 
   document.querySelectorAll(".allpaths").forEach((e) => {
+    e.removeAttribute("images");
+
     data?.forEach((pro) => {
       const isMatch = pro?.fields?.countries?.find(
         (cnt) =>
@@ -427,4 +429,3 @@ function change_countries_table(drink_name) {
 
   $("#countries_table").html(html_data);
 }
-
