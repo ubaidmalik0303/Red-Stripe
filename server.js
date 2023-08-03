@@ -2,11 +2,18 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const contentful = require("contentful");
+const cors = require("cors");
 
 const client = contentful.createClient({
   space: "8tjh3iu7zcf1",
   accessToken: "blMbzyPmhrByPUrh4Oza4kru7nnM1rPP5aP4RliAunQ",
 });
+
+app.use(
+  cors({
+    origin: "https://preview.redstripecorporate.com",
+  })
+);
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "public"));
@@ -28,7 +35,7 @@ app.get("/values", function (req, res) {
 
 app.get("/our-brand", function (req, res) {
   client.getEntry("616xPWE78QnfDLleJTx3CS").then((entry) => {
-    console.log("Our Brand:", entry.fields)
+    console.log("Our Brand:", entry.fields);
     client
       .getEntries({
         content_type: "products",

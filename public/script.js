@@ -44,84 +44,94 @@ async function getData(place) {
   // document.getElementById("time").innerText=`${place}'s time = ${time} ${data . timezone_abbreviation}`
 }
 
-const changeImages = (products) => {
+document.querySelectorAll(".allpaths").forEach((e) => {
+  e.removeAttribute("images");
+});
+
+function changeImages(products) {
   const data = JSON.parse(products);
 
   document.querySelectorAll(".allpaths").forEach((e) => {
-    e.setAttribute("images", "");
+    e.removeAttribute("images");
 
     data?.forEach((pro) => {
       const isMatch = pro?.fields?.countries?.find(
         (cnt) =>
           cnt?.fields?.title.toLowerCase() ===
-          e.getAttribute("id").toLowerCase()
+          e?.getAttribute("id")?.toLowerCase()
       );
 
       if (isMatch) {
-        e.setAttribute(
-          "images",
-          `${e.getAttribute("images")} ${
-            pro?.fields?.image?.fields?.file?.url
-          }, `
-        );
+        if (e.getAttribute("images")) {
+          e.setAttribute(
+            "images",
+            `${e.getAttribute(
+              "images"
+            )}, ${pro?.fields?.image?.fields?.file?.url.slice(2)}`
+          );
+        } else {
+          e.setAttribute(
+            "images",
+            `${pro?.fields?.image?.fields?.file?.url.slice(2)}`
+          );
+        }
       }
     });
   });
-};
 
-document.querySelectorAll(".allpaths").forEach((e) => {
-  e.addEventListener("mouseenter", function (j) {
-    // console.log();
-    offsets = this.getBoundingClientRect();
-
-    // window.onmouseover=function(j){
-    // x=j.clientX;
-    // y=j.clientY;
-    document.getElementById("name").style.top = offsets.top + "px";
-    document.getElementById("name").style.left = offsets.left + "px";
-    // }
-    jQuery(".allpaths").css({ fill: "#ececec" });
-    e.style.fill = "#EB1E2F";
-    // document.getElementById("namep").innerText=e.id;
-
-    var images_1 = e.getAttribute("images");
-    var brandlinks_1 = e.getAttribute("brandlinks");
-
-    // console.log(images_1);
-    const all_images = images_1.split(",");
-    const all_brand_links = brandlinks_1.split(",");
-
-    var html_data = "<h4>" + e.id + "</h4>";
-    for (var i = 0; i < all_images.length; i++) {
-      // console.log(all_images[i]);
-      var image_name = all_images[i].trim();
-      var brand_link = all_brand_links[i].trim();
-
-      var img =
-        "<a href='" +
-        brand_link +
-        "'><img src='images/" +
-        image_name +
-        "' style='max-height: 100px;'></a>";
-
-      html_data += img;
+  // setTimeout(() => {
+  document.querySelectorAll(".allpaths").forEach((e) => {
+    if (
+      e.getAttribute("images") === "" ||
+      e.getAttribute("images") === null ||
+      e.getAttribute("images") === undefined
+    ) {
+      return;
     }
 
-    document.getElementById("name").innerHTML = html_data;
+    e.addEventListener("mouseenter", function (j) {
+      offsets = this.getBoundingClientRect();
 
-    document.getElementById("name").style.opacity = 1;
-    document.getElementById("name").style.display = "block";
-  });
-  e.addEventListener("mouseleave", function () {
-    if (jQuery("#name:hover").length != 0) {
-      // $(".hint").text("Mouse is Over the DIV Element.");
-    } else {
-      e.style.fill = "#ececec";
-      document.getElementById("name").style.opacity = 0;
-      document.getElementById("name").style.display = "none";
-    }
+      // window.onmouseover=function(j){
+      // x=j.clientX;
+      // y=j.clientY;
+      document.getElementById("name").style.top = offsets.top + "px";
+      document.getElementById("name").style.left = offsets.left + "px";
+      // }
+      jQuery(".allpaths").css({ fill: "#ececec" });
+      e.style.fill = "#EB1E2F";
+      // document.getElementById("namep").innerText=e.id;
 
-    window.onmouseleave = function (j) {
+      var images_1 = e.getAttribute("images");
+      var brandlinks_1 = e.getAttribute("brandlinks");
+
+      const all_images = images_1.split(",");
+      const all_brand_links = brandlinks_1.split(",");
+
+      var html_data = "";
+
+      html_data = "<h4>" + e.id + "</h4>";
+      for (var i = 0; i < all_images.length; i++) {
+        var image_name = all_images[i]?.trim();
+
+        // var img =
+        //   "<a href='" +
+        //   brand_link +
+        //   "'><img src='" +
+        //   image_name +
+        //   "' style='max-height: 100px;'></a>";
+
+        var img = `<img src='https://${image_name}' style='max-height: 100px; margin-right: 20px;'>`;
+
+        html_data += img;
+      }
+
+      document.getElementById("name").innerHTML = html_data;
+
+      document.getElementById("name").style.opacity = 1;
+      document.getElementById("name").style.display = "block";
+    });
+    e.addEventListener("mouseleave", function () {
       if (jQuery("#name:hover").length != 0) {
         // $(".hint").text("Mouse is Over the DIV Element.");
       } else {
@@ -129,18 +139,27 @@ document.querySelectorAll(".allpaths").forEach((e) => {
         document.getElementById("name").style.opacity = 0;
         document.getElementById("name").style.display = "none";
       }
-    };
-  });
 
-  e.addEventListener("click", function () {
-    getData(e.id);
+      window.onmouseleave = function (j) {
+        if (jQuery("#name:hover").length != 0) {
+          // $(".hint").text("Mouse is Over the DIV Element.");
+        } else {
+          e.style.fill = "#ececec";
+          document.getElementById("name").style.opacity = 0;
+          document.getElementById("name").style.display = "none";
+        }
+      };
+    });
+
+    e.addEventListener("click", function () {
+      getData(e.id);
+    });
   });
-});
+  // }, 1000);
+}
 
 function change_countries_table(drink_name) {
   drink_name = JSON.parse(drink_name);
-
-  console.log(drink_name);
 
   // red_stripe dragon_stout dragon_stout_1 ed_stripe_ca guinness_sto smirnoff_vod
   var html_data = "";
