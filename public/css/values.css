@@ -12,6 +12,11 @@
   background-repeat: no-repeat;
   height: auto;
 }
+img{
+  max-width:100%;
+  border:none;
+  height:auto;
+}
 .value-banner .content {
   text-align: center;
   padding: 30px 0px;
